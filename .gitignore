@@ -1,0 +1,14 @@
+#node modules
+node_modules
+
+#output of tsc
+tsconfig.tsbuildinfo
+
+#next
+.next
+
+#test
+coverage
+
+#store
+.DS_Store

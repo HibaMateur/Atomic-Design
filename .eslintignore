@@ -1,0 +1,44 @@
+# Base
+coverage
+node_modules
+.storybook
+public
+**/.DS_Store
+.gitkeep
+.husky
+tsconfig.json
+README.md
+package.json
+styles
+
+# Lint Staged
+.lintstagedrc.json
+
+# EsLint
+.eslintrc.json
+.eslintignore
+
+# Prettier
+.prettierignore
+.prettierrc.json
+
+# Next.js
+.next
+next.config.js
+next-env.d.ts
+
+#Storybook
+.storybook
+stories
+
+#lang
+lang
+
+#github
+.github
+README.md
+CODE_OF_CONDUCT.md
+
+#tests
+tests
+jest.config.js

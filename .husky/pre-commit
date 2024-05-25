@@ -1,0 +1,59 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo '💄 Styling your project...'
+(yarn lint --fix) || (
+    echo '❌ Failed Linting. Please fix your lint errors before committing.'
+    exit false
+)
+echo '✅ Linting passed.'
+
+
+# Check tsconfig standards
+echo '🔎 Checking tsconfig...'
+yarn check-types || 
+    (
+        echo '❌ Failed Type Check. Please fix your typescript errors before committing.'
+        exit false
+    );
+echo '✅ Type check passed.'
+
+# Check prettier standards
+echo '🔎 Checking prettier...'
+yarn check-lint || 
+    (
+        echo '❌ Failed Linter Check. Please fix your Linter errors before committing.'
+        exit false
+    );
+echo '✅ Linter check passed.'
+
+# Check format
+echo '🔎 Checking Prettier format...'
+yarn check-format || 
+    (
+        echo '❌ Failed Prettier Format Check. Please fix your format errors before committing.'
+        exit false
+    );
+echo '✅ Prettier Format check passed.'
+
+# format
+echo '📄 Formatting the code'
+yarn format || 
+    (
+        echo '❌ Failed Format. Please fix your format errors before committing.'
+        exit false
+    );
+echo '✅ Format the code passed.'
+
+# lint staged changes
+echo '🔎 Linting staged changes...'
+yarn lint-staged || 
+    (
+        echo '❌ Failed Linting Staged Changes. Please fix your lint errors before committing.'
+        exit false
+    );
+echo '✅ Linting staged changes passed.'
+
+
+# If everything ins ok, then commit
+echo '✅ ✅ ✅ Everything looks good. Committing... ✅ ✅ ✅'

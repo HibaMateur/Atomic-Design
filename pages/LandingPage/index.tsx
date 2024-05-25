@@ -1,0 +1,10 @@
+import { NextPage } from 'next'
+
+const LandingPage: NextPage = () => (
+    <div>
+        <h1>Landing Page</h1>
+        <h2>Get started by editing pages/LandingPage/index.tsx</h2>
+    </div>
+)
+
+export default LandingPage
